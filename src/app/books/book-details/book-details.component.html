@@ -1,15 +1,16 @@
 <div class="container">
-    <div class="book" *ngIf="book">
+    <article class="book" *ngIf="book">
         <div class="row-1">
             <div class="col-1">
-                <img [src]="book?.imageLinks.small" alt="book thumbnail">
+                <img [src]="book?.imageLinks?.thumbnail" alt="book thumbnail">
                 <i class="fa fa-star mobile" title="{{ isInFavorites ? 'Remove from favorites' : 'Add to favorites'}}"
                     [ngClass]="{'infavorites':isInFavorites}" (click)="chooseAction(isInFavorites,book)"></i>
             </div>
             <div class="col-2">
                 <div>
                     <h3>{{book.title}}</h3>
-                    <i class="fa fa-star desktop" title="{{ isInFavorites ? 'Remove from favorites' : 'Add to favorites'}}"
+                    <i class="fa fa-star desktop"
+                        title="{{ isInFavorites ? 'Remove from favorites' : 'Add to favorites'}}"
                         [ngClass]="{'infavorites':isInFavorites}" (click)="chooseAction(isInFavorites,book)"></i>
                 </div>
                 <p><span>{{book.authors.length > 1? 'Authors: ': 'Author: '}}</span>{{book.authors}}</p>
@@ -21,5 +22,5 @@
         <div class="row-2">
             <p [innerHtml]="book.description"></p>
         </div>
-    </div>
+    </article>
 </div>

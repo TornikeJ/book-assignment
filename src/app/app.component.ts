@@ -8,8 +8,6 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 })
 export class AppComponent {
   title = 'Books';
-  activatedComponent;
-  color = '#ed6491';
   showLoadingIndicator = true;
 
   constructor(
@@ -18,8 +16,6 @@ export class AppComponent {
 
 
   ngOnInit() {
-    this.activatedComponent = 'home';
-
     this.router.events.subscribe(
       (routerEvent) => {
 

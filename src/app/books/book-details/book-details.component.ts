@@ -80,5 +80,4 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-
 }

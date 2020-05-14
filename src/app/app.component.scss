@@ -11,9 +11,10 @@ $color2: #5862cf;
   }
 }
 
-
 section {
   background-color: $color1;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .loader,

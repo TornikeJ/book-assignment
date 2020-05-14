@@ -1,19 +1,20 @@
 <div class="container">
-    <div class="book" *ngFor="let book of books; let i=index">
+    <article class="book" *ngFor="let book of books; let i=index">
         <div class="col-1">
             <img [src]="book.imageLinks.smallThumbnail" alt="book thumbnail">
             <i class="fa fa-star mobile" title="{{ isInFavorites[i] ? 'Remove from favorites' : 'Add to favorites'}}"
-            [ngClass]="{'infavorites':isInFavorites[i]}" (click)="chooseAction(isInFavorites[i],book)"></i>
+                [ngClass]="{'infavorites':isInFavorites[i]}" (click)="chooseAction(isInFavorites[i],book)"></i>
         </div>
         <div class="col-2">
             <div>
                 <h3>{{book.title}}</h3>
-                <i class="fa fa-star desktop" title="{{ isInFavorites[i] ? 'Remove from favorites' : 'Add to favorites'}}"
+                <i class="fa fa-star desktop"
+                    title="{{ isInFavorites[i] ? 'Remove from favorites' : 'Add to favorites'}}"
                     [ngClass]="{'infavorites':isInFavorites[i]}" (click)="chooseAction(isInFavorites[i],book)"></i>
             </div>
             <p>{{book.description | descriptionLimit}} </p>
             <button [routerLink]="['/books',book.id]">Read more</button>
         </div>
-    </div>
+    </article>
     <button class="load" (click)="loadMore()">Load more</button>
 </div>
