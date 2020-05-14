@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <section>
+      <div *ngIf="showLoadingIndicator" class="loader"></div>
+      <router-outlet></router-outlet>
+  </section>
+</div>

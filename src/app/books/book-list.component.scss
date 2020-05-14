@@ -1,0 +1,175 @@
+$color1: #f5c978;
+$color2: #5862cf;
+$color3: #cccccc;
+$color4: #989898;
+$color5: #212121;
+$color6: #a8a8a81a;
+$color7: #ffffff;
+
+.container {
+  padding: 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 80px;
+  grid-row-gap: 60px;
+
+  .book {
+    display: flex;
+    background: $color7;
+    padding: 17px 25px 19px 18px;
+    border: transparent solid 1px;
+    border-radius: 10px;
+    box-shadow: 2px 8px 10px $color6;
+
+    .col {
+      &-1 {
+        display: flex;
+        align-items: flex-start;
+        margin-right: 1.5rem;
+
+        img {
+          width: 130px;
+          height: 178px;
+        }
+      }
+
+      &-2 {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+          display: flex;
+          justify-content: flex-end;
+
+          &:first-child {
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+
+    i {
+      font-size: 25px;
+      color: $color3;
+      cursor: pointer;
+
+      &.infavorites {
+        color: $color1;
+      }
+
+      &.mobile {
+        display: none;
+      }
+    }
+
+    h3 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color5;
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      margin-bottom: auto;
+      color: $color4;
+      word-spacing: 1.3px;
+      letter-spacing: 0.2px;
+      line-height: 24px;
+    }
+
+    button {
+      align-self: flex-end;
+    }
+
+    span {
+      color: initial;
+      font-weight: 600;
+    }
+  }
+}
+
+button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: bold;
+  background: $color6;
+  color: $color2;
+  width: 100px;
+  height: 35px;
+  border-radius: 18px;
+
+  &.load {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+
+  &:hover {
+    color: $color7;
+    background: $color2;
+  }
+}
+
+@media only screen and (max-width: 865px) {
+  .container {
+    grid-column-gap: 30px;
+
+    .book {
+      flex-direction: column;
+      padding-left: 25px;
+
+      .col {
+        &-1 {
+          position: relative;
+          justify-content: center;
+          margin-bottom: 1rem;
+          margin-right: 0;
+        }
+
+        &-2 {
+          height: 100%;
+          text-align: center;
+          align-items: center;
+
+          p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+          }
+
+          button {
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    i {
+      &.mobile {
+        display: initial !important;
+        position: absolute;
+        right: 0;
+      }
+
+      &.desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: auto;
+
+    button {
+      &.load {
+        grid-column: initial;
+        justify-self: center;
+      }
+    }
+  }
+}

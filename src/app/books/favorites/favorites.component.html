@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="book" *ngFor="let book of books;">
+        <div class="col-1">
+            <img [src]="book.imageLinks.smallThumbnail" alt="book thumbnail">
+            <i class="fa fa-star mobile" title="Remove from favorites"
+                [ngClass]="{'infavorites':1}" (click)="RemoveFromFavorites(book.id)"></i>
+        </div>
+        <div class="col-2">
+            <div>
+                <h3>{{book.title}}</h3>
+                <i class="fa fa-star desktop" title="Remove from favorites"
+                    [ngClass]="{'infavorites':1}" (click)="RemoveFromFavorites(book.id)"></i>
+            </div>
+            <p>{{book.description | descriptionLimit}}</p>
+            <button [routerLink]="['/books',book.id]">Read more</button>
+        </div>
+    </div>
+</div>

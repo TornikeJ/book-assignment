@@ -1,0 +1,181 @@
+$color1: #f5c978;
+$color2: #5862cf;
+$color3: #cccccc;
+$color4: #989898;
+$color5: #a8a8a81a;
+$color6: #212121;
+$color7: #ffffff;
+
+.container {
+  padding: 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+
+  .book {
+    display: flex;
+    flex-direction: column;
+    background: $color7;
+    padding: 4rem 10rem;
+    border: transparent solid 1px;
+    border-radius: 10px;
+    box-shadow: 2px 8px 10px $color5;
+
+    .row {
+      &-1 {
+        display: flex;
+
+        .col {
+          &-1 {
+            margin-right: 3rem;
+
+            img {
+              width: 177px;
+            }
+          }
+
+          &-2 {
+            > div {
+              display: flex;
+
+              h3 {
+                margin-right: 2rem;
+              }
+            }
+          }
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-2 {
+        p {
+          color: initial;
+          font-size: 16px;
+        }
+      }
+    }
+
+    i {
+      font-size: 25px;
+      color: $color3;
+      cursor: pointer;
+
+      &.infavorites {
+        color: $color1;
+      }
+
+      &.mobile {
+        display: none;
+      }
+    }
+
+    h3 {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color6;
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      margin-bottom: auto;
+      color: $color4;
+      word-spacing: 1.3px;
+      letter-spacing: 0.2px;
+      line-height: 24px;
+    }
+
+    button {
+      align-self: flex-end;
+    }
+
+    span {
+      color: initial;
+      font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .container {
+    .book {
+      padding: 4rem 4rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .container {
+    .book {
+      padding: 4rem 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .container {
+    .book {
+      .row {
+        &-1 {
+          flex-direction: column;
+
+          .col {
+            &-1 {
+              display: flex;
+              position: relative;
+              justify-content: center;
+              margin-right: 0;
+              margin-bottom: 1rem;
+            }
+
+            &-2 {
+              text-align: center;
+
+              > div {
+                justify-content: center;
+              }
+            }
+          }
+        }
+
+        &-2 {
+          text-align: center;
+        }
+      }
+
+      i {
+        &.mobile {
+          display: initial !important;
+          position: absolute;
+          right: 0;
+        }
+        &.desktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    padding: 2rem 1rem;
+
+    .book {
+      padding: 4rem 1rem;
+
+      .row-1 {
+        .col {
+          &-1 {
+            img {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

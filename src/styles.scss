@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  html {
+    height: initial;
+  }
+}

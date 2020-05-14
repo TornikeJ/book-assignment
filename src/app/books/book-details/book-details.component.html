@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="book" *ngIf="book">
+        <div class="row-1">
+            <div class="col-1">
+                <img [src]="book?.imageLinks.small" alt="book thumbnail">
+                <i class="fa fa-star mobile" title="{{ isInFavorites ? 'Remove from favorites' : 'Add to favorites'}}"
+                    [ngClass]="{'infavorites':isInFavorites}" (click)="chooseAction(isInFavorites,book)"></i>
+            </div>
+            <div class="col-2">
+                <div>
+                    <h3>{{book.title}}</h3>
+                    <i class="fa fa-star desktop" title="{{ isInFavorites ? 'Remove from favorites' : 'Add to favorites'}}"
+                        [ngClass]="{'infavorites':isInFavorites}" (click)="chooseAction(isInFavorites,book)"></i>
+                </div>
+                <p><span>{{book.authors.length > 1? 'Authors: ': 'Author: '}}</span>{{book.authors}}</p>
+                <p><span>Publish date: </span>{{book.publishedDate}}</p>
+                <p><span>Categories: </span>{{book.categories}}</p>
+                <p><span>Pages: </span>{{book.pageCount}}</p>
+            </div>
+        </div>
+        <div class="row-2">
+            <p [innerHtml]="book.description"></p>
+        </div>
+    </div>
+</div>
