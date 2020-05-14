@@ -1,15 +1,15 @@
 <nav>
     <div class="container">
         <div class="logo">
-            <img [routerLink]="['books']" src="assets/books/book-icon.png" alt="Books logo">
+            <img [routerLink]="['books']" #logo (click)="logo.blur()" src="assets/books/book-icon.png" alt="Books logo">
         </div>
         <div class="desktop">
             <ul>
-                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                <li routerLinkActive="active" #home (click)="home.blur()" [routerLinkActiveOptions]="{exact:
                     true}" [routerLink]="['books']">Home</li>
-                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                <li routerLinkActive="active" #favorite (click)="favorite.blur()" [routerLinkActiveOptions]="{exact:
                     true}" [routerLink]="['favorites']">Favorites</li>
             </ul>
-        </div>
+        </div>  
     </div>
 </nav>

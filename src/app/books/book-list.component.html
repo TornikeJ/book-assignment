@@ -16,5 +16,5 @@
             <button [routerLink]="['/books',book.id]">Read more</button>
         </div>
     </article>
-    <button class="load" (click)="loadMore()">Load more</button>
+    <button class="load" #load (click)="loadMore(); load.blur()">Load more</button>
 </div>
